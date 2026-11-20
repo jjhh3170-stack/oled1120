@@ -69,7 +69,7 @@ ITO 기판, Thermal evaporator, ADEL 측정 장비, Encapsulation 재료
 
 ## Ⅳ. 실험 결과 및 고찰
 
-측정 결과는 조교가 제공한 그래프(Lambertian pattern, Δu′v′, 정면 EL 스펙트럼)를 사용하였다. 원본 수치 파일이 없어 그래프에서 데이터 점을 추출해 다시 그렸다. 소자 A, B, C의 구조는 스펙트럼과 각도 특성으로 판단하였다.
+Fig. 1–3은 조교가 제공한 측정 결과 그래프이다. Table 1의 수치는 그래프에서 읽은 값이며, 소자 A, B, C의 구조는 스펙트럼과 각도 특성으로 판단하였다.
 
 ### 1. OLED 전면, 후면 발광소자의 광 손실 경로를 설명하고 각 광손실 경로(WG / SPP)의 광추출 방법을 설명하시오.
 
@@ -79,6 +79,7 @@ ITO 기판, Thermal evaporator, ADEL 측정 장비, Encapsulation 재료
 
 **WG mode 광추출 방법.** WG mode는 고굴절 ITO·유기층 안에서 전반사로 갇힌 빛이므로, 진행 방향을 바꾸거나 전반사 조건을 깨는 구조를 넣는다.
 
+- Microlens array(MLA): 소자 표면에 반구형 렌즈를 배열해 계면 입사각을 임계각보다 작게 만들어 빛을 꺼낸다.
 - 산란층: 고굴절 나노입자나 기공을 포함한 층을 ITO 아래에 넣어 갇힌 빛을 여러 방향으로 산란시킨다.
 - 주기 구조: 회절격자나 photonic crystal로 k<sub>∥</sub>를 바꾸어 빛을 air mode로 회절시킨다.
 - 굴절률 조절: 고굴절 기판을 쓰거나, 유기층 안에 저굴절 grid를 넣어 전반사 조건을 바꾼다.
@@ -93,17 +94,17 @@ ITO 기판, Thermal evaporator, ADEL 측정 장비, Encapsulation 재료
 
 ### 2. Microcavity Device와 Non Microcavity Device의 시야각 의존성을 Lambertian Pattern 및 색좌표 변동성 그래프를 통해 구분하고 근거를 설명하시오.
 
-**Fig. 1** 각도에 따른 정규화 광세기: (a) polar, (b) cartesian
+**Fig. 1** A, B, C와 Lambertian의 각도별 광세기 분포
 
-![angular](figures/fig_angular.png)
+![lambertian](figures/ppt_a_lambertian.png)
 
 **Fig. 2** 각도에 따른 색좌표 변화 Δu′v′
 
-![duv](figures/fig_duv.png)
+![duv](figures/ppt_b_duv.png)
 
-**Fig. 3** 정면 방향 정규화 EL 스펙트럼
+**Fig. 3** 정면 EL 스펙트럼 (검정 A, 파랑 B, 초록 C)
 
-![el](figures/fig_el.png)
+![el](figures/ppt_c_el.png)
 
 **Table 1** 소자별 시야각 특성 (0° 세기로 정규화)
 
@@ -138,9 +139,7 @@ B와 C는 정면 스펙트럼이 거의 같다(최대 532 nm, 반치폭 27 nm와
 
 1. R. Meerheim, M. Furno, S. Hofmann, B. Lüssem, K. Leo, "Quantification of energy loss mechanisms in organic light-emitting diodes," *Appl. Phys. Lett.* **97**, 253305 (2010).
 
-### 부록 — 데이터 처리 요약
+### 부록 — 데이터 처리
 
-- 조교가 제공한 결과 파일(`2026 OLED 실험_9주차 ADEL_실험 결과.pptx`)의 그래프 3개(a: Lambertian pattern, b: Δu′v′, c: 정면 EL 스펙트럼)에서 축 눈금으로 좌표를 보정하고 색상별로 데이터 점과 곡선을 추출하였다.
-- 겹쳐서 추출이 어려운 점(A의 0–20°, B의 45° 이상 등)은 그래프에서 읽은 값으로 보완하였으므로 수치에 약 ±0.02의 오차가 있을 수 있다.
-- 세기가 절반이 되는 각도와 적분 광량은 추출한 점을 선형 보간하여 계산하였다. 적분 광량은 ∫ I(θ) sin θ dθ를 Lambertian의 값(0.5)으로 나눈 상대값이다.
-- 모든 그래프는 추출한 데이터로 Python(numpy/matplotlib)에서 다시 작성하였다.
+- Fig. 1–3은 조교가 제공한 결과 파일(`2026 OLED 실험_9주차 ADEL_실험 결과.pptx`)의 그래프를 그대로 사용하였다.
+- Table 1의 값과 본문의 수치는 그래프 눈금에서 읽은 값이다. 세기가 절반이 되는 각도와 적분 광량은 읽은 점을 선형 보간하여 구하였고, 적분 광량은 ∫ I(θ) sin θ dθ를 Lambertian의 값(0.5)으로 나눈 상대값이다.
